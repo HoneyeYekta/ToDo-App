@@ -21,60 +21,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: "Poppins";
-      }
-
-      .background-image {
-        height: 100vh;
-        background: url(images/background.jpg) top/contain no-repeat fixed,
-          rgb(245, 243, 245);
-      }
-
-      .main {
-        height: 500px;
-      }
-
-      .main h1 {
-        color: white;
-      }
-
-      .new-to-do button {
-        color: white;
-        background-color: #75b798;
-      }
-
-      .new-to-do button:hover,
-      .new-to-do button:focus {
-        color: white;
-        background-color: #61967d;
-      }
-
-      .to-do-list input:checked {
-        background-color: #75b798 !important;
-      }
-
-      .to-do-list input:checked + label {
-        text-decoration: line-through;
-        color: #bbb;
-      }
-
-      .to-do-list .task {
-        overflow: hidden;
-        white-space: nowrap;
-      }
-
-      .to-do-list label {
-        text-overflow: ellipsis;
-      }
-
-      .icons button:hover i {
-        color: red;
-      }
-    </style>
   </head>
 
   <body>
@@ -88,10 +34,10 @@
           <div class="input-group mb-3">
             <input
               type="text"
-              class="form-control"
+              class="form-control p-3"
               placeholder="Create a new todo..."
             />
-            <button class="btn px-5" type="button">ADD</button>
+            <button class="btn px-5" type="submit">ADD</button>
           </div>
         </form>
 

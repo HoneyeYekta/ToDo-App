@@ -1,0 +1,52 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+  }
+
+  .background-image {
+    height: 100vh;
+    background: url(images/background.jpg) top/contain no-repeat fixed,
+      rgb(245, 243, 245);
+  }
+
+  .main {
+    height: 500px;
+  }
+
+  .main h1 {
+    color: white;
+  }
+
+  .new-to-do button {
+    color: white;
+    background-color: #448366;
+  }
+
+  .new-to-do button:hover,
+  .new-to-do button:focus {
+    color: white;
+    background-color: #2a6b4d;
+  }
+
+  .to-do-list input:checked {
+    background-color: #3d755b !important;
+  }
+
+  .to-do-list input:checked + label {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+
+  .to-do-list .task {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .to-do-list label {
+    text-overflow: ellipsis;
+  }
+
+  .icons button:hover i {
+    color: red;
+  }
