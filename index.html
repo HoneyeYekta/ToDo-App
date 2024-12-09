@@ -35,110 +35,15 @@
             <input
               type="text"
               class="form-control p-3"
+              id="inputText"
               placeholder="Create a new todo..."
             />
-            <button class="btn px-5" type="submit">ADD</button>
+            <button class="btn px-5" type="button" onclick="Add()">ADD</button>
           </div>
         </form>
 
         <div class="to-do-list shadow-lg rounded">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <div class="row">
-                <div class="task col-10">
-                  <input
-                    class="form-check-input rounded-circle me-2"
-                    type="checkbox"
-                    value=""
-                    id="checkbox-01"
-                  />
-                  <label class="form-check-label" for="checkbox-01">
-                    Read an article on optimizing system performance
-                  </label>
-                </div>
-
-                <div
-                  class="icons col-2 d-flex justify-content-end align-items-center"
-                >
-                  <button class="btn" type="button">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div class="row">
-                <div class="task col-10">
-                  <input
-                    class="form-check-input rounded-circle me-2"
-                    type="checkbox"
-                    value=""
-                    id="checkbox-02"
-                  />
-                  <label class="form-check-label" for="checkbox-02">
-                    Share progress updates on current tasks
-                  </label>
-                </div>
-
-                <div
-                  class="icons col-2 d-flex justify-content-end align-items-center"
-                >
-                  <button class="btn" type="button">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div class="row">
-                <div class="task col-10">
-                  <input
-                    class="form-check-input rounded-circle me-2"
-                    type="checkbox"
-                    value=""
-                    id="checkbox-03"
-                  />
-                  <label class="form-check-label" for="checkbox-03">
-                    Push code changes to the repository
-                  </label>
-                </div>
-
-                <div
-                  class="icons col-2 d-flex justify-content-end align-items-center"
-                >
-                  <button class="btn" type="button">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div class="row">
-                <div class="task col-10">
-                  <input
-                    class="form-check-input rounded-circle me-2"
-                    type="checkbox"
-                    value=""
-                    id="checkbox-04"
-                  />
-                  <label class="form-check-label" for="checkbox-04">
-                    Prepare for tomorrow’s standup meeting
-                  </label>
-                </div>
-
-                <div
-                  class="icons col-2 d-flex justify-content-end align-items-center"
-                >
-                  <button class="btn" type="button">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <ul class="list-group" id="toDoList"></ul>
         </div>
       </div>
     </div>
