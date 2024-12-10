@@ -10,6 +10,7 @@ const Add = () => {
   }
   const li = document.createElement("li");
   li.classList = "list-group-item";
+  li.id = `item-${index}`;
 
   li.innerHTML = `<div class="row">
     <div class="task col-10">
@@ -27,7 +28,7 @@ const Add = () => {
     <div
       class="icons col-2 d-flex justify-content-end align-items-center"
     >
-      <button class="btn" type="button" onclick="remove()">
+      <button class="btn" type="button" onclick="remove('item-${index}')">
         <i class="bi bi-trash"></i>
       </button>
     </div>
@@ -39,6 +40,7 @@ const Add = () => {
   textToBeAdded.value = "";
 };
 
-const remove = () => {
-  alert("you have to pay me to remove this:D");
+const remove = (idToRemove) => {
+  let doneLi = document.getElementById(idToRemove);
+  doneLi.remove();
 };
