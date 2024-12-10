@@ -1,5 +1,3 @@
-const addToDoButton = document.querySelector("#btnAdd");
-
 let index = 1;
 
 const Add = () => {
@@ -34,7 +32,7 @@ const Add = () => {
     </div>
   </div>`;
 
-  const ul = document.querySelector("#toDoList");
+  const ul = document.getElementById("toDoList");
   ul.appendChild(li);
   index++;
   textToBeAdded.value = "";
