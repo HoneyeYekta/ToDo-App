@@ -35,15 +35,17 @@
             <input
               type="text"
               class="form-control p-3"
-              id="inputText"
               placeholder="Create a new todo..."
+              id="todoText"
             />
-            <button class="btn px-5" type="button" onclick="Add()">ADD</button>
+            <button class="btn px-5" type="button" onclick="addNewToDoItem()">
+              ADD
+            </button>
           </div>
         </form>
 
         <div class="to-do-list shadow-lg rounded">
-          <ul class="list-group" id="toDoList"></ul>
+          <ul class="list-group" id="todoListItems"></ul>
         </div>
       </div>
     </div>

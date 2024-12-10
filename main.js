@@ -1,44 +1,64 @@
-let index = 1;
+let todoItems = [];
 
-const Add = () => {
-  const textToBeAdded = document.querySelector("#inputText");
-  if (textToBeAdded.value === "") {
-    alert("please creat a todo!");
+const addNewToDoItem = () => {
+  let textElement = document.getElementById("todoText");
+
+  if (textElement.value === "") {
+    alert("entering the todo text is mandatory");
     return;
   }
-  const li = document.createElement("li");
-  li.classList = "list-group-item";
-  li.id = `item-${index}`;
 
-  li.innerHTML = `<div class="row">
-    <div class="task col-10">
-      <input
-        class="form-check-input rounded-circle me-2"
-        type="checkbox"
-        value=""
-        id="checkbox-${index}"
-      />
-      <label class="form-check-label" for="checkbox-${index}">
-        ${textToBeAdded.value}
-      </label>
-    </div>
-  
-    <div
-      class="icons col-2 d-flex justify-content-end align-items-center"
-    >
-      <button class="btn" type="button" onclick="remove('item-${index}')">
-        <i class="bi bi-trash"></i>
-      </button>
-    </div>
-  </div>`;
+  const isItemAlreadyExist = todoItems.some(
+    (item) => item === textElement.value
+  );
 
-  const ul = document.getElementById("toDoList");
-  ul.appendChild(li);
-  index++;
-  textToBeAdded.value = "";
+  if (isItemAlreadyExist) {
+    alert("the item you've entered is already exist!");
+    return;
+  }
+
+  todoItems.push(textElement.value);
+  render();
+
+  textElement.value = "";
 };
 
-const remove = (idToRemove) => {
-  let doneLi = document.getElementById(idToRemove);
-  doneLi.remove();
+const remove = (itemToRemove) => {
+  let indexToRemove = todoItems.indexOf(itemToRemove);
+  todoItems.splice(indexToRemove, 1);
+  render();
+};
+
+const render = () => {
+  const ul = document.getElementById("todoListItems");
+
+  ul.innerHTML = "";
+
+  for (const item of todoItems) {
+    const li = document.createElement("li");
+    li.classList = "list-group-item";
+    li.innerHTML = `
+    <div class="row">
+        <div class="task col-10">
+            <label class="form-check-label">
+            <input
+                class="form-check-input rounded-circle me-2"
+                type="checkbox"
+                value=""
+            />
+           ${item}
+            </label>
+        </div>
+
+        <div
+            class="icons col-2 d-flex justify-content-end align-items-center"
+        >
+            <button class="btn" type="button" onclick="remove('${item}')">
+            <i class="bi bi-trash"></i>
+            </button>
+        </div>
+    </div>
+    `;
+    ul.appendChild(li);
+  }
 };
