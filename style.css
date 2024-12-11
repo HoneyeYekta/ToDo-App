@@ -6,12 +6,7 @@ body {
 
   .background-image {
     height: 100vh;
-    background: url(images/background.jpg) top/contain no-repeat fixed,
-      rgb(245, 243, 245);
-  }
-
-  .main {
-    height: 500px;
+    background: url(images/background.jpg) center/cover no-repeat fixed;
   }
 
   .main h1 {
