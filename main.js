@@ -18,7 +18,7 @@ const addNewToDoItem = () => {
   }
 
   todoItems.push(textElement.value);
-  localStorage.setItem('items', JSON.stringify(todoItems));
+  localStorage.setItem("items", JSON.stringify(todoItems));
   render();
 
   textElement.value = "";
@@ -27,7 +27,7 @@ const addNewToDoItem = () => {
 const remove = (itemToRemove) => {
   const indexToRemove = todoItems.indexOf(itemToRemove);
   todoItems.splice(indexToRemove, 1);
-  localStorage.setItem('items', JSON.stringify(todoItems));
+  localStorage.setItem("items", JSON.stringify(todoItems));
   render();
 };
 
@@ -65,8 +65,9 @@ const render = () => {
   }
 };
 
-
-if(localStorage.getItem('items')) {
-  todoItems = JSON.parse(localStorage.getItem('items'));
-  render();
-}
+window.onload = () => {
+  if (localStorage.getItem("items")) {
+    todoItems = JSON.parse(localStorage.getItem("items"));
+    render();
+  }
+};
