@@ -40,7 +40,9 @@ const render = () => {
 
   ul.innerHTML = "";
 
-  for (const item of todoItems) {
+  const sortedItems = todoItems.sort((a, b) => a.isDone - b.isDone);
+
+  for (const item of sortedItems) {
     const li = document.createElement("li");
     li.classList = "list-group-item";
     li.innerHTML = `
