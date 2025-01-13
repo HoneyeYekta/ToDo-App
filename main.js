@@ -48,9 +48,11 @@ const render = () => {
         <div class="task col-10">
             <label class="form-check-label">
             <input
+                onchange="changeStatus(this)"
                 class="form-check-input rounded-circle me-2"
                 type="checkbox"
-                value=""
+                value="${item.title}"
+                ${item.isDone ? "checked" : ""}
             />
            ${item.title}
             </label>
