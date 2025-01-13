@@ -71,6 +71,14 @@ const render = () => {
   }
 };
 
+const changeStatus = (input) => {
+  let matchElement = todoItems.find((item) => item.title === input.value);
+  matchElement.isDone = input.checked;
+
+  saveAllItemstoLocalStorage();
+  render();
+};
+
 const saveAllItemstoLocalStorage = () => {
   localStorage.setItem("items", JSON.stringify(todoItems));
 };
