@@ -40,9 +40,7 @@ const render = () => {
 
   ul.innerHTML = "";
 
-  const sortedItems = todoItems.sort((a, b) => a.isDone - b.isDone);
-
-  for (const item of sortedItems) {
+  for (const item of todoItems) {
     const li = document.createElement("li");
     li.classList = "list-group-item";
     li.innerHTML = `
@@ -77,8 +75,18 @@ const changeStatus = (input) => {
   let matchElement = todoItems.find((item) => item.title === input.value);
   matchElement.isDone = input.checked;
 
+  //move checked item to end of array
+  let currentIndex = todoItems.findIndex((element) => element === matchElement);
+  move(todoItems, currentIndex, todoItems.length - 1);
+
   saveAllItemstoLocalStorage();
   render();
+};
+
+const move = (arr, fromIndex, toIndex) => {
+  let element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(toIndex, 0, element);
 };
 
 const saveAllItemstoLocalStorage = () => {
