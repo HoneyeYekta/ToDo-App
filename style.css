@@ -10,17 +10,17 @@ body {
   }
 
   .main h1 {
-    color: white;
+    color: #fdfefe;
   }
 
   .new-to-do button {
-    color: white;
+    color: #fdfefe;
     background-color: #448366;
   }
 
   .new-to-do button:hover,
   .new-to-do button:focus {
-    color: white;
+    color: #fdfefe;
     background-color: #2a6b4d;
   }
 
@@ -33,15 +33,13 @@ body {
     color: #bbb;
   }
 
-  .to-do-list .task {
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
   .to-do-list label {
     text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
   }
 
   .icons button:hover i {
-    color: red;
+    color: #ff2d00;
   }
