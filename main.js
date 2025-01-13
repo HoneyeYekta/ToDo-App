@@ -9,7 +9,7 @@ const addNewToDoItem = () => {
   }
 
   const isItemAlreadyExist = todoItems.some(
-    (item) => item === textElement.value
+    (item) => item.title === textElement.value
   );
 
   if (isItemAlreadyExist) {
@@ -17,7 +17,11 @@ const addNewToDoItem = () => {
     return;
   }
 
-  todoItems.push(textElement.value);
+  todoItems.push({
+    title: textElement.value,
+    isDone: false,
+  });
+
   saveAllItemstoLocalStorage();
   render();
 
@@ -48,7 +52,7 @@ const render = () => {
                 type="checkbox"
                 value=""
             />
-           ${item}
+           ${item.title}
             </label>
         </div>
 
