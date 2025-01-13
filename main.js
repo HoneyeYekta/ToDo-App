@@ -17,7 +17,7 @@ const addNewToDoItem = () => {
     return;
   }
 
-  todoItems.push({
+  todoItems.unshift({
     title: textElement.value,
     isDone: false,
   });
