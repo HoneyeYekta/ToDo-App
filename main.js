@@ -24,7 +24,7 @@ const addNewToDoItem = () => {
 };
 
 const remove = (itemToRemove) => {
-  let indexToRemove = todoItems.indexOf(itemToRemove);
+  const indexToRemove = todoItems.indexOf(itemToRemove);
   todoItems.splice(indexToRemove, 1);
   render();
 };
