@@ -1,16 +1,44 @@
 body {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins";
-  }
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
 
-  .background-image {
-    height: 100vh;
-    background: url(images/background.jpg) center/cover no-repeat fixed;
-  }
+.background-image {
+  height: 100vh;
+  background: url(images/background.jpg) center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  background: #eceee0;
+  opacity: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.main-box {
+  text-align: center;
+}
+
+.to-do-list {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto; /* Enables scrolling */
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
   .main h1 {
-    color: #fdfefe;
+    color: #525850;
   }
 
   .new-to-do button {

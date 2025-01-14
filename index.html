@@ -28,21 +28,23 @@
       class="background-image d-flex justify-content-center align-items-center"
     >
       <div class="main col-lg-6 p-5">
-        <h1>TODO</h1>
+        <div class="main-box">
+          <h1>TODO</h1>
 
-        <form class="new-to-do my-4">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="Create a new todo..."
-              id="todoText"
-            />
-            <button class="btn px-5" type="button" onclick="addNewToDoItem()">
-              ADD
-            </button>
-          </div>
-        </form>
+          <form class="new-to-do my-4">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control p-3"
+                placeholder="Create a new todo..."
+                id="todoText"
+              />
+              <button class="btn px-5" type="button" onclick="addNewToDoItem()">
+                ADD
+              </button>
+            </div>
+          </form>
+        </div>
 
         <div class="to-do-list shadow-lg rounded">
           <ul class="list-group" id="todoListItems"></ul>

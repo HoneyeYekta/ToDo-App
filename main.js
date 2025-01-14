@@ -28,9 +28,18 @@ const addNewToDoItem = () => {
   textElement.value = "";
 };
 
-const remove = (itemToRemove) => {
-  const indexToRemove = todoItems.indexOf(itemToRemove);
-  todoItems.splice(indexToRemove, 1);
+// const remove = (itemToRemove) => {
+//   const indexToRemove = todoItems.indexOf(itemToRemove);
+//   todoItems.splice(indexToRemove, 1);
+//   saveAllItemstoLocalStorage();
+//   render();
+// };
+
+const remove = (itemTitleToRemove) => {
+  let toBeRemovedIndex = todoItems.findIndex(
+    (item) => item.title === itemTitleToRemove
+  );
+  todoItems.splice(toBeRemovedIndex, 1);
   saveAllItemstoLocalStorage();
   render();
 };
@@ -69,7 +78,7 @@ const render = () => {
         <div
             class="icons col-2 d-flex justify-content-end align-items-center"
         >
-            <button class="btn" type="button" onclick="remove('${item}')">
+            <button class="btn" type="button" onclick="remove('${item.title}')">
             <i class="bi bi-trash"></i>
             </button>
         </div>
@@ -86,6 +95,14 @@ const changeStatus = (input) => {
 
   saveAllItemstoLocalStorage();
   render();
+
+  const elementToScroll =
+    document.getElementById("todoListItems").parentElement;
+
+  elementToScroll.scrollBy({
+    top: elementToScroll.scrollHeight,
+    behavior: "smooth",
+  });
 };
 
 const saveAllItemstoLocalStorage = () => {
