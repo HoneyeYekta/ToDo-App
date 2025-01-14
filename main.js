@@ -51,10 +51,12 @@ const render = () => {
         <div class="task col-10" >
            
             <input
-                id='item-${index}'
                 onchange="changeStatus(this)"
+                id='item-${index}'
                 class="form-check-input rounded-circle me-2"
                 type="checkbox"
+                value="${item.title}"
+                ${item.isDone ? "checked" : ""}
                 value="${item.title}"
                 ${item.isDone ? "checked" : ""}
             />
