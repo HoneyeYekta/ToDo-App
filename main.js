@@ -47,8 +47,8 @@ const render = () => {
     const li = document.createElement("li");
     li.classList = "list-group-item";
     li.innerHTML = `
-    <div class="row">
-        <div class="task col-10">
+    <div class="row" title='${item.title}'>
+        <div class="task col-10" >
            
             <input
                 id='item-${index}'
