@@ -28,13 +28,6 @@ const addNewToDoItem = () => {
   textElement.value = "";
 };
 
-// const remove = (itemToRemove) => {
-//   const indexToRemove = todoItems.indexOf(itemToRemove);
-//   todoItems.splice(indexToRemove, 1);
-//   saveAllItemstoLocalStorage();
-//   render();
-// };
-
 const remove = (itemTitleToRemove) => {
   let toBeRemovedIndex = todoItems.findIndex(
     (item) => item.title === itemTitleToRemove
